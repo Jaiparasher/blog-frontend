@@ -30,7 +30,7 @@ const CreatePostPage = () => {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center w-full h-screen bg-gray-100">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-6">Create New Post</h2>
         <form onSubmit={handleSubmit}>
