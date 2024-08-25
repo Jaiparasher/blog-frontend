@@ -10,7 +10,7 @@ const HomePage = () => {
     const { posts, isLoading, error } = useSelector(state => state.posts); // Changed loading to isLoading
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
-    const token = localStorage.get("token")
+    const token = localStorage.getItem("token");
 
     const handleSearch = (e) => {
         e.preventDefault();
