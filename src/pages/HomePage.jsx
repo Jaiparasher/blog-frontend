@@ -10,6 +10,7 @@ const HomePage = () => {
     const { posts, isLoading, error } = useSelector(state => state.posts); // Changed loading to isLoading
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
+    const token = localStorage.get("token")
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -19,6 +20,10 @@ const HomePage = () => {
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
+
+    if(!token){
+        navigate('/register');
+    }
 
     if (isLoading) return <Loader />; // Changed loading to isLoading
     if (error) return <div>Error: {error.message}</div>;
